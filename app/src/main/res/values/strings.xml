@@ -2,6 +2,6 @@
     <string name="app_name">YoMamaStickers</string>
     <string name="header">Yo Mama Stickers</string>
     <string name="send_to">Share Sticker with...</string>
-    <string name="footer">Placeholder Text!</string>
+    <string name="footer"></string>
 
 </resources>
