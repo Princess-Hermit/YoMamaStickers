@@ -1,26 +1,35 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        Storeconfig {
+            keyAlias 'YMStoreKeyRel'
+            keyPassword 'YoMama'
+            storeFile file('D:/GitProjects/AndroidKeys/Keystores/YoMamaStickersRel.jks')
+            storePassword 'YoMama'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.princesshermit.colin.yomamastickers"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.03"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.Storeconfig
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
